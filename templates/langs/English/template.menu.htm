@@ -1,0 +1,164 @@
+<?if($data['mode']=='horz'){?>
+	<div class="top_menu">
+				<ul>                                               
+					<li><a class=menu href="<?=$data['Host']?>/index.htm">Home</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/about.htm">About Us</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/fees.htm">Fees</a></li>
+					<li><a href="#" id="buy">Buy&Sell iPayGold</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/policy.htm">Privacy Policy</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/agreement.htm">Member Agreement</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/faq.htm" id="faq">Faq</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/contact.htm">Contact&nbsp;Us</a></li>
+					<li><?if(!$_SESSION['login']){?><a class=menu href="<?=$data['Members']?>/login.htm">Login</a><?}?></li>
+				</ul>
+			</div>
+<?}elseif($data['mode']=='myfooter'){?>
+	<div class="footer">
+				<ul>                                               
+					<li><a class=menu href="<?=$data['Host']?>/index.htm">Home</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/about.htm">About Us</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/fees.htm">Fees</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/policy.htm">Privacy Policy</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/agreement.htm">Member Agreement</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/faq.htm">Faq</a></li>
+					<li><a class=menu href="<?=$data['Host']?>/contact.htm">Contact&nbsp;Us</a></li>
+					<li><?if(!$_SESSION['login']){?><a class=menu href="<?=$data['Members']?>/login.htm">Login</a><?}?></li>
+				</ul>
+			</div>
+<?}elseif($data['mode']=='vert'){?>
+<?if(!$_SESSION['login']){?>
+
+<div class="widget_area">
+				<div class="widget_area_top">Main Menu</div>
+				<div class="widget_area_content">
+					<ul>
+						<li><a href="<?=$data['Host']?>/index.htm">HOME</a></li>
+						<li><a href="<?=$data['Host']?>/about.htm">ABOUT&nbsp;US</a></li>
+						<li><a href="<?=$data['Host']?>/news.htm">NEWS</a></li>
+						<li><a href="<?=$data['Host']?>/fees.htm">FEES</a></li>
+						<li><a href="<?=$data['Host']?>/policy.htm">PRIVACY&nbsp;POLICY</a></li>
+						<li><a href="<?=$data['Host']?>/agreement.htm">USER&nbsp;AGREEMENT</a></li>
+						<li><a href="<?=$data['Host']?>/faq.htm">FAQ</a></li>
+						<li><a href="<?=$data['Host']?>/contact.htm">CONTACT&nbsp;US</a></li>
+						<li><a href="<?=$data['Host']?>/shop.htm">SHOP</a></li>
+						<li><a href="<?=$data['Members']?>/login.htm">MEMBER&nbsp;LOGIN</a></li>
+					</ul>
+				</div>
+				<div class="widget_area_bottom">&nbsp;</div>
+			</div>
+<?}?>
+<?if($data['PageFile']=='shop'){?>
+<br>
+<div class="widget_area">
+				<div class="widget_area_top">Categories</div>
+				<div class="widget_area_content"><ul>
+				<?foreach($data['RootCategoriesList'] as $key=>$value){?>
+			    <li><a href="shop.htm?cid=<?=$value['id']?>&action=view"><?=$value['name']?></a></li>
+                <?}?></ul>
+			</div>
+			<div class="widget_area_bottom">&nbsp;</div>
+			</div>
+<?}?>
+<?}elseif($data['mode']=='acch'){?>
+<div class="widget_area_content"> <ul>
+<ul><li><a href="<?=$data['Members']?>/index.htm"<?if($data['PageFile']=='index'){?> style="color:#FF3399"<?}?>>MY&nbsp;ACCOUNT</a></li>
+<li><a href="<?=$data['Members']?>/send.htm"<?if($data['PageFile']=='send'){?> style="color:#FF3399"<?}?>>SEND&nbsp;MONEY</a></li>
+<li><a href="<?=$data['Members']?>/deposit.htm"<?if($data['PageFile']=='deposit'){?> style="color:#FF3399"<?}?>>DEPOSIT&nbsp;MONEY</a></li>
+<li><a href="<?=$data['Members']?>/withdraw.htm"<?if($data['PageFile']=='withdraw'){?> style="color:#FF3399"<?}?>>WITHDRAW&nbsp;MONEY</a></li>
+<li><a href="<?=$data['Members']?>/escrow.htm"<?if($data['PageFile']=='escrow'){?> style="color:#FF3399"<?}?>>ESCROW</a></li>
+<li><a href="<?=$data['Members']?>/products.htm"<?if($data['PageFile']=='products'){?> style="color:#FF3399"<?}?>>PRODUCTS</a></li>
+<li><a href="<?=$data['Members']?>/logout.htm">LOGOUT</a></li></ul>
+</div>
+<?}elseif($data['mode']=='accv'){?>
+<div class="widget_area">
+				<div class="widget_area_top">Account Menu</div>
+				<div class="widget_area_content">
+					<ul>
+					<li><a href="<?=$data['Members']?>/index.htm"<?if($data['PageFile']=='index'){?> style="color:#FF3399"<?}?>>OVERVIEW</a></li>
+<li><a href="<?=$data['Members']?>/profile.htm"<?if($data['PageFile']=='profile'){?> style="color:#FF3399"<?}?>>EDIT&nbsp;PROFILE</a></li>
+<li><a href="<?=$data['Members']?>/emails.htm"<?if($data['PageFile']=='emails'){?> style="color:#FF3399"<?}?>>MANAGE&nbsp;EMAILS</a></li>
+<li><a href="<?=$data['Members']?>/password.htm"<?if($data['PageFile']=='password'){?> style="color:#FF3399"<?}?>>EDIT&nbsp;PASSWORD</a></li>
+<li><a href="<?=$data['Members']?>/card.htm"<?if($data['PageFile']=='card'){?> style="color:#FF3399"<?}?>>CREDIT&nbsp;CARDS</a></li>
+<li><a href="<?=$data['Members']?>/bank.htm"<?if($data['PageFile']=='bank'){?> style="color:#FF3399"<?}?>>BANK&nbsp;ACCOUNTS</a></li>
+<li><a href="<?=$data['Members']?>/close.htm"<?if($data['PageFile']=='close'){?> style="color:#FF3399"<?}?>>CLOSE&nbsp;ACCOUNT</a></li>
+					</ul>
+				</div>
+				<div class="widget_area_bottom">&nbsp;</div>
+				
+				
+				<div class="widget_area_top">Merchant Menu</div>
+				<div class="widget_area_content">
+					<ul>
+						<li><a href="<?=$data['Members']?>/products.htm"<?if($data['PageFile']=='products'){?> style="color:#FF3399"<?}?>>PRODUCTS</a></li>
+<li><a href="<?=$data['Members']?>/donations.htm"<?if($data['PageFile']=='donations'){?> style="color:#FF3399"<?}?>>DONATIONS</a></li>
+<li><a href="<?=$data['Members']?>/subscriptions.htm"<?if($data['PageFile']=='subscriptions'){?> style="color:#FF3399"<?}?>>SUBSCRIPTIONS</a></li>
+<li><a href="<?=$data['Members']?>/shopcart.htm"<?if($data['PageFile']=='shopcart'){?> style="color:#FF3399"<?}?>>SHOPPING&nbsp;CART</a></li>
+<li><a href="<?=$data['Members']?>/payment.htm"<?if($data['PageFile']=='payment'){?> style="color:#FF3399"<?}?>>SIMPLE&nbsp;PAYMENTS</a></li>
+					</ul>
+				</div>
+				<div class="widget_area_bottom">&nbsp;</div>
+				
+				
+				<div class="widget_area_top">Payments Menu</div>
+				<div class="widget_area_content">
+					<ul>
+						<li><a href="<?=$data['Members']?>/deposit.htm"<?if($data['PageFile']=='deposit'){?> style="color:#FF3399"<?}?>>DEPOSIT&nbsp;MONEY</a></li>
+<li><a href="<?=$data['Members']?>/withdraw.htm"<?if($data['PageFile']=='withdraw'){?> style="color:#FF3399"<?}?>>WITHDRAW&nbsp;MONEY</a></li>
+<li><a href="<?=$data['Members']?>/send.htm"<?if($data['PageFile']=='send'){?> style="color:#FF3399"<?}?>>SEND&nbsp;PAYMENT</a></li>
+<li><a href="<?=$data['Members']?>/request.htm"<?if($data['PageFile']=='request'){?> style="color:#FF3399"<?}?>>REQUEST&nbsp;PAYMENT</a></li>
+<li><a href="<?=$data['Members']?>/mass.htm"<?if($data['PageFile']=='mass'){?> style="color:#FF3399"<?}?>>MASS&nbsp;PAYMENTS</a></li>
+<li><a href="<?=$data['Members']?>/escrow.htm"<?if($data['PageFile']=='escrow'){?> style="color:#FF3399"<?}?>>ESCROW</a></li></ul>
+					
+			
+
+
+<!--<table class=frame width=100% border=0 cellspacing=1 cellpadding=2>
+<tr><th class=caption>ACCOUNT MENU</th></tr>
+<tr><td>
+<a href="<?=$data['Members']?>/index.htm"<?if($data['PageFile']=='index'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;OVERVIEW</a><br>
+<a href="<?=$data['Members']?>/profile.htm"<?if($data['PageFile']=='profile'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;EDIT&nbsp;PROFILE</a><br>
+<a href="<?=$data['Members']?>/emails.htm"<?if($data['PageFile']=='emails'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;MANAGE&nbsp;EMAILS</a><br>
+<a href="<?=$data['Members']?>/password.htm"<?if($data['PageFile']=='password'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;EDIT&nbsp;PASSWORD</a><br>
+<a href="<?=$data['Members']?>/card.htm"<?if($data['PageFile']=='card'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;CREDIT&nbsp;CARDS</a><br>
+<a href="<?=$data['Members']?>/bank.htm"<?if($data['PageFile']=='bank'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;BANK&nbsp;ACCOUNTS</a><br>
+<a href="<?=$data['Members']?>/close.htm"<?if($data['PageFile']=='close'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;CLOSE&nbsp;ACCOUNT</a>
+</td></tr>
+<tr><th class=caption>MERCHANT MENU</th></tr>
+<tr><td>
+
+</td></tr>
+<tr><th class=caption>PAYMENTS MENU</th></tr>
+<tr><td><a href="<?=$data['Members']?>/deposit.htm"<?if($data['PageFile']=='deposit'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;DEPOSIT&nbsp;MONEY</a><br>
+<a href="<?=$data['Members']?>/withdraw.htm"<?if($data['PageFile']=='withdraw'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;WITHDRAW&nbsp;MONEY</a><br>
+<a href="<?=$data['Members']?>/send.htm"<?if($data['PageFile']=='send'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;SEND&nbsp;PAYMENT</a><br>
+<a href="<?=$data['Members']?>/request.htm"<?if($data['PageFile']=='request'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;REQUEST&nbsp;PAYMENT</a><br>
+<a href="<?=$data['Members']?>/mass.htm"<?if($data['PageFile']=='mass'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;MASS&nbsp;PAYMENTS</a><br>
+<a href="<?=$data['Members']?>/escrow.htm"<?if($data['PageFile']=='escrow'){?> style="color:#FF3399"<?}?>>&nbsp;&middot;&nbsp;ESCROW</a>
+</td></tr>-->
+<?if($data['ReferralPays']){?>
+     <div class="widget_area_bottom">&nbsp;</div>
+    <div class="widget_area_top">Affiliate Menu</div>
+	<div class="widget_area_content">
+	<ul>
+    <li><a href="<?=$data['Members']?>/affdetails.htm"<?if($data['PageFile']=='affdetails'){?> style="color:#FF3399"<?}?>>PROGRAM&nbsp;DETAILS</a></li>
+    <li><a href="<?=$data['Members']?>/affdownline.htm"<?if($data['PageFile']=='affdownline'){?> style="color:#FF3399"<?}?>>YOUR&nbsp;DOWNLINE</a></li>
+    <li><a href="<?=$data['Members']?>/affbanners.htm"<?if($data['PageFile']=='affbanners'){?> style="color:#FF3399"<?}?>>OUR&nbsp;BANNERS</a></li>
+    </ul>
+	</div>
+
+
+<?}?>
+<?if($data['Advertising']){?>
+ <div class="widget_area_top">Advertising</div>
+	<div class="widget_area_content">
+	<ul>
+    <li><a href="<?=$data['Members']?>/advertising.htm"<?if($data['PageFile']=='advertising'){?> style="color:#FF3399"<?}?>>YOUR&nbsp;BANNERS</a></li>
+    </ul>
+	</div>
+
+<?}?>
+ <ul>
+    <li><a href="<?=$data['Members']?>/logout.htm">LOGOUT</a></li></ul></div>
+	<div class="widget_area_bottom">&nbsp;</div>
+</div>
+<?}?>

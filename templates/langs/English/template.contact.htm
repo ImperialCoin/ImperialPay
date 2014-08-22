@@ -1,0 +1,34 @@
+<?if(isset($data['ScriptLoaded'])){?><?if(!$data['PostSent']){?>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="frame">
+  <tr>
+    <th class="caption ">CONTACT US</th>
+  </tr>
+ <tr>
+    <td valign="top" class="text">
+<form method=post><center><table class=frame width=100% border=0 cellspacing=10 cellpadding=4>
+  <?if(!$data['CantLogin']){?>
+  <?if($data['Error']){?><tr><td colspan=2 class=error><?=prntext($data['Error'])?></td></tr><?}?><tr bgcolor=#EEEEEE>
+  <td class=field align=right nowrap>Your E-mail Address (*):</td>
+  <td align="left"><input type=text name=useremail size=30 maxlength=128 value="<?=prntext($post['useremail'])?>"></td></tr><tr bgcolor=#EEEEEE><td class=field align=right>Your Name (*):</td><td align="left"><input type=text name=username size=30 maxlength=128 value="<?=prntext($post['username'])?>" ></td></tr>
+  <tr bgcolor=#EEEEEE>
+  <td class=field align=right nowrap>Your Account (*):</td>
+  <td align="left"><input type=text name=useracc size=30 maxlength=128 value="<?=prntext($post['useracc'])?>"></td></tr>
+   <tr bgcolor=#EEEEEE>
+  <td class=field align=right>Department (*):</td><td align="left">
+  <select name=userdep>
+  <option value="General Questions">General Questions</option>
+  <option value="Business Department">Business Department</option>
+  <option value="Abuse Department">Abuse Department</option>
+  <option value="Funding Questions">Funding Questions</option>
+  </select></td>
+  </tr>
+  <tr bgcolor=#EEEEEE><td class=field align=right>Subject (*):</td><td align="left"><input type=text name=usermsgsub size=30 maxlength=128 value="<?=prntext($post['usermsgsub'])?>" ></td></tr>
+  <tr bgcolor=#EEEEEE><td class=field align=right>Message Text (*):</td><td align="left">
+  <textarea name=usermsgtxt cols=29 rows=7><?=prntext($post['usermsgtxt'])?></textarea>
+  </td></tr>
+ <?if($data['UseTuringNumber']){?>
+     <tr><td class=field align=right valign=top nowrap>Turing Number (*):</td><td class=justify bgcolor=#EEEEEE valign=top><img class=turing src="<?=$data['Host']?>/turing.htm" width=78 height=15 border=1 align=absmiddle>&nbsp;<input type=text name=turing size=16 maxlength=32><br><font class=remark>In our continued efforts to provide the most secure service possible we have added a security test to prevent automated registrations. Enter the numbers as they are shown in the image below.</font></td></tr><?}?><tr><td colspan=2 align=center bgcolor=#CCCCCC><div style="text-align:center"><input type=submit class=submit name=send value="SUBMIT"></div></td></tr><?}else{?><?}?></table>
+</center></form></td></tr></table><?}else{?>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="frame" align="center">
+  <tr><td align="center"><div style="text-align:center">Your message was sent.<br><br><hr><br><a href="contact.htm">BACK</a> | <a href="index.htm">HOME</a></div></td></tr></table><?}?><?}else{?>SECURITY ALERT: Access Denied<?}?>

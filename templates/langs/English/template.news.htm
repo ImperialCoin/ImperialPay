@@ -1,0 +1,19 @@
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="frame">
+  <tr>
+    <th class="caption ">NEWS</th>
+  </tr>
+  <tr>
+    <td valign="top" class="text">
+<?
+$shownews = mysql_query("SELECT * FROM dp_news") or die(mysql_error());
+while($res_shownews = mysql_fetch_array($shownews)){
+?>
+<u><b><font color=#FF0000><?= $res_shownews[newstitle]; ?></font></b></u>
+<blockquote style="margin:10px 10px 10px 10px">
+<?= $res_shownews[content]; ?>
+</blockquote><br><br>
+<?
+}
+?>
+
+</td></tr></table>

@@ -1,0 +1,97 @@
+<?if(isset($data['ScriptLoaded'])){?>
+<div align=center>
+
+<?if($post['action']=='add'){ ?>
+<form action="news.htm" method="post">
+	<p align="left">Title Name : <input type="text" id = "titlename" name="titlename" value="" size="70" /></p>
+	<textarea cols="80" id="editor1" name="editor1" rows="10"></textarea>
+		<script type="text/javascript">
+			//<![CDATA[
+			CKEDITOR.replace( 'editor1',
+			{
+				fullPage : true
+			});
+			//]]>
+		</script>
+	<p>
+	<input type="hidden" value="addnews" name="addnews" />
+	<input type="submit" value="Submit" /></p>
+</form>
+<?}?>
+
+<?if($post['addnews']=='addnews'){ ?>
+<p><?= $data['result']; ?></p>
+<form action="news.htm" method="post">
+	<p align="left">Title Name : <input type="text" id = "titlename" name="titlename" value="" size="70" /></p>
+	<textarea cols="80" id="editor1" name="editor1" rows="10"></textarea>
+		<script type="text/javascript">
+			//<![CDATA[
+			CKEDITOR.replace( 'editor1',
+			{
+				fullPage : true
+			});
+			//]]>
+		</script>
+	<p>
+	<input type="hidden" value="addnews" name="addnews" />
+	<input type="submit" value="Submit" /></p>
+</form>
+<?}?>
+
+<?if($post['action']=='update'){ 
+?>
+<table width='50%'><tr>
+	<td align='center' width='15%'><strong>S.No.</strong></td>
+	<td align='center' width='15%'><strong>Title Name</strong></td>
+	<td align='center' width='10%'><strong>Edit</strong></td>
+	<td align='center' width='10%'><strong>Delete</strong></td>
+</tr></table>
+<?
+	echo $data[showresults];
+}?>
+
+<?if($post['action']=='edit'){ ?>
+<form action="news.htm" method="post">
+	<p align="left">Title Name : <input type="text" id = "titlename" name="titlename" value="<?= $data[get_title]; ?>" size="70" /></p>
+	<textarea cols="80" id="editor2" name="editor2" rows="10"><?= $data[get_content]; ?></textarea>
+		<script type="text/javascript">
+			//<![CDATA[
+			CKEDITOR.replace( 'editor2',
+			{
+				fullPage : true
+			});
+			//]]>
+		</script>
+	<p>
+	<input type="hidden" value="<?= $data[get_id]; ?>" name="newsid" />
+	<input type="hidden" value="updatenews" name="news" />
+	<input type="submit" value="Submit" /></p>
+</form>
+<?}?>
+
+<? if($post['news']=='updatenews'){ ?>
+<p><?= $data['result']; ?></p>
+<form action="news.htm" method="post">
+	<p align="left">Title Name : <input type="text" id = "titlename" name="titlename" value="<?= $data[get_title]; ?>" size="70" /></p>
+	<textarea cols="80" id="editor2" name="editor2" rows="10"><?= $data[get_content]; ?></textarea>
+		<script type="text/javascript">
+			//<![CDATA[
+			CKEDITOR.replace( 'editor2',
+			{
+				fullPage : true
+			});
+			//]]>
+		</script>
+	<p>
+	<input type="hidden" value="<?= $data[get_id]; ?>" name="newsid" />
+	<input type="hidden" value="updatenews" name="news" />
+	<input type="submit" value="Submit" /></p>
+</form>
+<?}?>
+
+<?if($post['action']=='delete'){
+echo '345678';
+}?>
+
+</div>
+<?}?>
